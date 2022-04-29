@@ -1,26 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <header>Comment Like/Dislike App</header>
+    <div class="container">
+      <div class="comment--like--dislike--app">
+
+        <AppComment :like="like" :dislike="dislike" v-for="comment in provideData.comments" :key="comment.id" :comment="comment"/>
+
+
+      </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import appComment from "@/components/appComment"
+import AppComment from "./components/appComment.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+components : {
+    appComment,
+    AppComment
+},
+  data(){
+    return {
+      provideData: {
+      comments: [
+        {id: 1, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint", like: 0, dislike: 0},
+        {id: 2, content: "perferendis delectus? Nostrum corporis, quod voluptates quis", like: 0, dislike: 0},
+        {id: 3, content: "consequuntur eveniet beatae dolor aperiam ad.", like: 0, dislike: 0},
+      ]
+      }
+    };
+  },
+  provide(){
+    return {
+      provideData: this.provideData.comments
+    }
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
