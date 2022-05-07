@@ -11,21 +11,20 @@
 </template>
 
 <script>
-import appComment from "@/components/appComment"
+
 import AppComment from "./components/appComment.vue";
 
 export default {
 components : {
-    appComment,
     AppComment
 },
   data(){
     return {
       provideData: {
       comments: [
-        {id: 1, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint", like: 0, dislike: 0},
-        {id: 2, content: "perferendis delectus? Nostrum corporis, quod voluptates quis", like: 0, dislike: 0},
-        {id: 3, content: "consequuntur eveniet beatae dolor aperiam ad.", like: 0, dislike: 0},
+        {id: 1, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint", likeCount: 0, dislikeCount: 0},
+        {id: 2, content: "perferendis delectus? Nostrum corporis, quod voluptates quis", likeCount: 0, dislikeCount: 0},
+        {id: 3, content: "consequuntur eveniet beatae dolor aperiam ad.", likeCount: 0, dislikeCount: 0},
       ]
       }
     };

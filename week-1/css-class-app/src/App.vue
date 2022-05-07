@@ -1,70 +1,71 @@
-
 <template>
-   <header>CSS Class App</header>
+
+
+    <header>CSS Class App</header>
     <div class="container css--class--app">
       <div class="card text-center">
         <ul class="css--palette text-center">
-          <li @click="btnRed" :style="{backgroundColor : element[0].color}"></li>
-          <li @click="btnGreen" :style="{backgroundColor : element[1].color}"></li>
-          <li @click="btnBlue" :style="{backgroundColor : element[2].color}"></li>
+          <li @click="clickedForRed" :style="{backgroundColor : colorItems[0].color}"></li>
+          <li @click="clickedForGreen" :style="{backgroundColor : colorItems[1].color}"></li>
+          <li @click="clickedForBlue" :style="{backgroundColor : colorItems[2].color}"></li>
         </ul>
-        <div class="result-box backColor" :class="showclass">
+        <div class="result-box bgColor" :class="changeBackground">
         </div>
       </div>
     </div>
+  <!-- </body> -->
 </template>
+
 <style>
-.backColor{
-  background-color: rebeccapurple;
+.bgColor{
+  background-color: blue;
 }
 </style>
 
-<script >
+<script>
 
-export default {
+    export default {
+        data(){
+          return {
 
-  data(){
-    return {
-
-      element: [
-              {color: "red", selected: false, pointer:"auto"},
-              {color: "green", selected: false, pointer:"auto"},
-              {color: "blue", selected: false, pointer:"auto"}
+            colorItems: [
+              {color: "purple", selected: false},
+              {color: "white", selected: false},
+              {color: "black", selected: false}
               ],
-    };
-  },
-  methods:{
-    btnRed(){
-         this.element[0].selected= true;
-            this.element[1].selected= false;
-            this.element[2].selected= false;
-            this.element[0].pointer= "none";
-            this.element[1].pointer= "auto";
-            this.element[2].pointer= "auto";
-    },
-    btnGreen(){
-        this.element[0].selected= false;
-            this.element[1].selected= true;
-            this.element[2].selected= false;
-            this.element[0].pointer= "auto";
-            this.element[1].pointer= "none";
-            this.element[2].pointer= "auto";
-    },
-    btnBlue(){
-            this.element[0].selected= false;
-            this.element[1].selected= false;
-            this.element[2].selected= true;
-            this.element[0].pointer= "auto";
-            this.element[1].pointer= "auto";
-            this.element[2].pointer= "none";
-    }
-  },
+          };
+        },
+        methods: {
+          changePurple(){
 
-  computed :{
+            this.colorItems[0].selected= true;
+            this.colorItems[1].selected= false;
+            this.colorItems[2].selected= false;
+        
+          },
+          changeWhite(){
 
-    showclass(){
-      return {red: this.element[0].selected, green: this.element[1].selected, blue:this.element[2].selected};
+            this.colorItems[0].selected= false;
+            this.colorItems[1].selected= true;
+            this.colorItems[2].selected= false;
+           
+          },
+          changeBlack(){
+            this.colorItems[0].selected= false;
+            this.colorItems[1].selected= false;
+            this.colorItems[2].selected= true;
+         
+          }
+        },
+        computed : {
+        changeBackground(){
+          
+            return {red: this.colorItems[0].selected, green: this.colorItems[1].selected, blue:this.colorItems[2].selected};
+        }
     }
-  }
-}
+    }
 </script>
+
+
+
+

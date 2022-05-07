@@ -1,3 +1,27 @@
+
+<style>
+
+.textareaBorder{
+  border: 3px solid purple;
+}
+.textareaFontBold {
+  font-weight: bold;
+}
+.textareaColor {
+  color: blue;
+}
+.textareaBorderRadius{
+  border-radius: 15px;
+}
+.textareaBackground{
+  background-color: aqua;
+}
+
+.textareaFontItalic{
+  font-style: italic;
+}
+</style>
+
 <template>
 
   <header>Class List App</header>
@@ -56,12 +80,12 @@
         data(){
           return {
             checkBoxes: [
-              {id: 1, checked: false,},
-              {id: 2, checked: false,},
-              {id: 3, checked: false,},
-              {id: 4, checked: false,},
-              {id: 5, checked: false,},
-              {id: 6, checked: false,}
+              {id: 1, checked: false},
+              {id: 2, checked: false},
+              {id: 3, checked: false},
+              {id: 4, checked: false},
+              {id: 5, checked: false},
+              {id: 6, checked: false}
             ],
           };
         },
@@ -80,24 +104,3 @@
         }
   }
 </script>
-
-<style>
-.textareaBackground{
-  background-color: rebeccapurple;
-}
-.textareaBorder{
-  border: 5px solid black;
-}
-.textareaBorderRadius{
-  border-radius: 20px;
-}
-.textareaColor {
-  color: red;
-}
-.textareaFontBold {
-  font-weight: bold;
-}
-.textareaFontItalic{
-  font-style: italic;
-}
-</style>
